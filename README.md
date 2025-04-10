@@ -46,3 +46,14 @@ await generate_unanswerable_batch(
 ## Evaluation
 1. You need to have a OpenAI key `export OPENAI_API_KEY='yourkey'`
 2. Check example in `./src/taxonomy/eval_unanswerable_harness.py`
+
+## Citation
+
+```ruby
+@article{peng2024unanswerability,
+  title={Unanswerability Evaluation for Retreival Augmented Generation},
+  author={Peng, Xiangyu and Choubey, Prafulla Kumar and Xiong, Caiming and Wu, Chien-Sheng},
+  journal={arXiv preprint arXiv:2412.12300},
+  year={2024}
+}
+```
