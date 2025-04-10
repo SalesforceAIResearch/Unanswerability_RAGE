@@ -1,4 +1,15 @@
-# Setup
+# Unanswerability Evaluation for Retrieval Augmented Generation
+
+Paper: [Arxiv Link](https://arxiv.org/abs/2412.12300)
+
+Existing evaluation frameworks for retrieval-augmented generation (RAG) systems focus on answerable queries, but they overlook the importance of appropriately rejecting unanswerable requests. 
+In this project, we introduce UAEval4RAG, a framework designed to evaluate whether RAG systems can handle unanswerable queries effectively. 
+We define a taxonomy with six unanswerable categories, and UAEval4RAG automatically synthesizes diverse and challenging queries for any given knowledge base with unanswered ratio and acceptable ratio metrics.
+We conduct experiments with various RAG components, including retrieval models, rewriting methods, rerankers, language models, and prompting strategies, and reveal hidden trade-offs in performance of RAG systems. 
+Our findings highlight the critical role of component selection and prompt design in optimizing RAG systems to balance the accuracy of answerable queries with high rejection rates of unanswerable ones. 
+UAEval4RAG provides valuable insights and tools for developing more robust and reliable RAG systems.
+
+## Setup
 
 ```ruby
 pyenv virtualenv 3.11 unans-rage
@@ -8,9 +19,9 @@ pyenv activate unans-rage
 pip install -r requirements.txt
 ```
 
-# Usage
-## Generate unanswerable queries
-### For the first five category
+## Usage
+### Generate unanswerable queries
+#### For the first five category
 
 1. You need to have a OpenAI key `export OPENAI_API_KEY='yourkey'`
 2. Check `./src/taxonomy/unanswerable_generation.py` for example
@@ -39,7 +50,7 @@ await generate_unanswerable_batch(
     generator_llm="gpt-4o"
 )
 ```
-### For the OOD category
+#### For the OOD category
 1. You need to have a OpenAI key `export OPENAI_API_KEY='yourkey'`
 2. Check example in `./src/ood/tenant_dataset_main.py`
 
