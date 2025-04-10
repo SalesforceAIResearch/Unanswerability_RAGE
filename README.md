@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ## Usage
 ### Generate unanswerable queries
-#### For the first five category
+#### 1. For the first five category
 
 1. You need to have a OpenAI key `export OPENAI_API_KEY='yourkey'`
 2. Check `./src/taxonomy/unanswerable_generation.py` for example
@@ -50,11 +50,11 @@ await generate_unanswerable_batch(
     generator_llm="gpt-4o"
 )
 ```
-#### For the OOD category
+#### 2. For the OOD category
 1. You need to have a OpenAI key `export OPENAI_API_KEY='yourkey'`
 2. Check example in `./src/ood/tenant_dataset_main.py`
 
-## Evaluation
+### Evaluation
 1. You need to have a OpenAI key `export OPENAI_API_KEY='yourkey'`
 2. Check example in `./src/taxonomy/eval_unanswerable_harness.py`
 
