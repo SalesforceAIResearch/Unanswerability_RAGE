@@ -54,7 +54,7 @@ def extract_text_newspaper(doc):
         article.parse()
         text = article.text
         title = article.title
-        # article.nlp()
+
 
         if len(text) < 100:
             return None
@@ -153,18 +153,10 @@ def extract_articles(urls: list):
     articles = multi_thread_extract_text(htmls, extract_text_newspaper)
     print(f"Extracted {len(articles)} articles")
 
-    # # try to re-crawl failed articles
-    # all_parsed_urls = set([a['url'] for a in articles])
-    # failed_articles = []
-    # for url in urls:
-    #     if url not in all_parsed_urls:
-    #         failed_articles.append(url)
-    # articles.extend(extract_articles_trafilatura(failed_articles))
     return articles
 
 
 def crawl_gnews_articles(keywords: list, articles_per_feed: int = 50, max_crawled_articles: int = 2500, timedelta_days: int = 1):
-    # urls = get_links_from_all_gnews_feeds(keywords, articles_per_feed, max_crawled_articles, timedelta_days)
     urls = get_google_news_article(keywords[0], articles_per_feed*3)
 
     print(f"Total Article URLs: {len(urls)}")
@@ -322,6 +314,4 @@ def get_google_news_article(search_string, test_size):
     return articles
 
 if __name__ == '__main__':
-    # crawler = DailyNewsCrawler()
-    # crawler.crawl_and_save()
     test_gnews_crawl()
